@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group 'com.et118'
+group 'com.github.et118'
 version '1.0'
 
 repositories {
