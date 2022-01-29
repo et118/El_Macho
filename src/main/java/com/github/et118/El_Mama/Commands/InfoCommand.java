@@ -34,7 +34,7 @@ public class InfoCommand extends Command{
             return event.getMessage().getChannel().flatMap(channel -> channel.createMessage(embedCreateSpec)).then();
         } else {
             builder = builder.color(Colors.INFO);
-            if(arguments[1].toLowerCase().equals("command") || arguments[1].toLowerCase().equals("cmd")) {
+            if(arguments[1].equalsIgnoreCase("command") || arguments[1].equalsIgnoreCase("cmd")) {
                 Map<String,ArrayList<Command>> categories = new HashMap<>();
                 for(Command command : commands) {
                     if(!categories.containsKey(command.getInfo().getCategory())) {
@@ -53,7 +53,7 @@ public class InfoCommand extends Command{
                 return event.getMessage().getChannel().flatMap(channel -> channel.createMessage(embedCreateSpec)).then();
             }
 
-            if(arguments[1].toLowerCase().equals("event") || arguments[1].toLowerCase().equals("evt")) {
+            if(arguments[1].equalsIgnoreCase("event") || arguments[1].equalsIgnoreCase("evt")) {
                 Map<String,ArrayList<Event>> categories = new HashMap<>();
                 for(Event ev : events) {
                     if(!categories.containsKey(ev.getInfo().getCategory())) {

@@ -46,7 +46,6 @@ public class CommandEvent extends Event{
     public Mono<Void> execute(Class eventType, discord4j.core.event.domain.Event rawEvent) {
         if(eventType.equals(MessageCreateEvent.class)) {
             MessageCreateEvent event = (MessageCreateEvent) rawEvent;
-            String content = event.getMessage().getContent();
             if(isCommandMessageFromPlayer(event.getMessage())) {
                 String messagePrefix = event.getMessage().getContent().toLowerCase().split(" ")[0];
                 for(Command command : commands) {
