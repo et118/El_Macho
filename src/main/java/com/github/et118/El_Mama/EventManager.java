@@ -21,7 +21,7 @@ public class EventManager {
     }
 
     public void addEvents() {
-        events.add(new CommandEvent(new EventInfo("Command", "Controls commands", "Core", true)));
+        events.add(new CommandEvent("!", new EventInfo("Command", "Controls commands", "Core", true)));
 
         subscribeToEvents();
     }
