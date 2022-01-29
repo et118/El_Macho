@@ -21,8 +21,8 @@ public class EventManager {
     }
 
     public void addEvents() {
-        events.add(new CommandEvent("!", new EventInfo("Command", "Controls commands", "Core", true)));
-
+        //Don't add events under the CommandEvent. It uses the other events in the Info Command.
+        events.add(new CommandEvent("!", events, new EventInfo("Command", "Controls commands", "Core", true)));
         subscribeToEvents();
     }
 
@@ -44,6 +44,7 @@ public class EventManager {
                     discordClient.getEventDispatcher().on(c).flatMap(e -> this.onEvent(c, (discord4j.core.event.domain.Event) e)).subscribe();
                 }
                 subscribedEvents.get(c).add(event);
+
             }
         }
     }

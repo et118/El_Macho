@@ -12,6 +12,18 @@ public class EventInfo {
         this.enabled = enabled;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
     public boolean isEnabled() {
         return enabled;
     }

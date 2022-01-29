@@ -8,6 +8,6 @@ public abstract class Command {
     public Command(CommandInfo commandInfo) {
         this.commandInfo = commandInfo;
     }
-    public CommandInfo getCommandInfo() {return this.commandInfo;}
+    public CommandInfo getInfo() {return this.commandInfo;}
     public abstract Mono<Void> execute(MessageCreateEvent event);
 }
