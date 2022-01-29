@@ -1,0 +1,12 @@
+com/github/et118/El_Mama/Bot.java
+ com.github.et118.El_Mama.Bot
+com/github/et118/El_Mama/Events/Event.java
+ com.github.et118.El_Mama.Events.Event
+com/github/et118/El_Mama/main.java
+ com.github.et118.El_Mama.main
+com/github/et118/El_Mama/Events/EventInfo.java
+ com.github.et118.El_Mama.Events.EventInfo
+com/github/et118/El_Mama/EventManager.java
+ com.github.et118.El_Mama.EventManager
+com/github/et118/El_Mama/Events/InsultEvent.java
+ com.github.et118.El_Mama.Events.InsultEvent
