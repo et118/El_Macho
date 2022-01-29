@@ -13,3 +13,4 @@ This is a Discord bot framework made with [discord4j](https://discord4j.com/) th
 ### TODO
 - Permission System
 - Gradle tasks for building and running
+- Define info about dependencies and minimum java version to run
