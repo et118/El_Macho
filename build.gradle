@@ -28,6 +28,7 @@ task fatJar(type: Jar) {
     group "El Mama"
     description "Creates an executable jar"
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    destinationDirectory = file("$rootDir/out")
     manifest {
         attributes "Main-Class" : mainClassName
     }
