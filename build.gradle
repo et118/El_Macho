@@ -4,6 +4,9 @@ plugins {
 
 group 'com.github.et118'
 version '1.0'
+def mainClassName = "com.github.et118.El_Mama.main"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -13,6 +16,23 @@ dependencies {
     implementation "com.discord4j:discord4j-core:3.2.1"
 }
 
-test {
-    useJUnitPlatform()
+task run(type: JavaExec) {
+    group "El Mama"
+    description "Runs the program"
+    classpath sourceSets.main.runtimeClasspath
+    main mainClassName
+}
+
+
+task fatJar(type: Jar) {
+    group "El Mama"
+    description "Creates an executable jar"
+
+    manifest {
+        attributes "Main-Class" : mainClassName
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
 }

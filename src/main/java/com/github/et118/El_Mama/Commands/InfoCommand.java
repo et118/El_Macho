@@ -26,7 +26,7 @@ public class InfoCommand extends Command{
         String[] arguments = message.split(" ");
         if(arguments.length <= 1) {
             builder = builder
-                    .color(Colors.ERROR)
+                    .color(Colors.INFO)
                     .title("Select Subcategory")
                     .addField("Command / cmd","\u200b",false)
                     .addField("Event / evt","\u200b",false);
