@@ -51,7 +51,7 @@ If you have selected the gradle task in the run configuration window you should 
 When you want to release your bot you can easily compile an executable jar file using Gradle.
 One way of doing it is by typing the following command into the terminal.
 ```
-./gradlew fatJar"
+./gradlew fatJar
 ```
 Another way of doing it is by double clicking the `fatJar` task in the Gradle sidebar. 
 Both of these methods will generate an executable jar in `PROJECT_DIR/out`. 
