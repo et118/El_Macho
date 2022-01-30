@@ -12,3 +12,5 @@ This is a Discord bot framework made with [discord4j](https://discord4j.com/) th
 - Info - Shows info about commands and events such as if they are enabled or not and description
 ### TODO
 - Permission System
+- Gradle tasks for building and running
+- Define info about dependencies and minimum java version to run
