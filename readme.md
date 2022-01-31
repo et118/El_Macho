@@ -14,6 +14,7 @@ It uses gradle 7.3.3 and java 17 and lower.
 ### TODO
 - Docs about how to create commands and events
 - Permission System
+- Change group name to rootProject.name in build.gradle
 
 <br>
 
