@@ -1,7 +1,7 @@
-package com.github.et118.El_Mama.Commands;
+package com.github.et118.El_Macho.Commands;
 
-import com.github.et118.El_Mama.Events.Event;
-import com.github.et118.El_Mama.Misc.Colors;
+import com.github.et118.El_Macho.Events.Event;
+import com.github.et118.El_Macho.Misc.Colors;
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.spec.EmbedCreateSpec;
 import reactor.core.publisher.Mono;
