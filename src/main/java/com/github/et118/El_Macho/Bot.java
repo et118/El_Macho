@@ -1,4 +1,4 @@
-package com.github.et118.El_Mama;
+package com.github.et118.El_Macho;
 
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;

@@ -1,10 +1,13 @@
-package com.github.et118.El_Mama;
+package com.github.et118.El_Macho;
 
-import com.github.et118.El_Mama.Events.CommandEvent;
-import com.github.et118.El_Mama.Events.Event;
-import com.github.et118.El_Mama.Events.EventInfo;
+import com.github.et118.El_Macho.Events.CommandEvent;
+import com.github.et118.El_Macho.Events.Event;
+import com.github.et118.El_Macho.Events.EventInfo;
+import com.github.et118.El_Macho.Events.MusicEvent;
 import discord4j.core.GatewayDiscordClient;
 import reactor.core.publisher.Mono;
+
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +26,7 @@ public class EventManager {
     public void addEvents() {
         //Don't add events under the CommandEvent. It uses the other events in the Info Command.
         events.add(new CommandEvent("!", events, new EventInfo("Command", "Controls commands", "Core", true)));
+        events.add(new MusicEvent(new EventInfo("Music","Adds and removes the music player","Music",true)));
         subscribeToEvents();
     }
 
@@ -33,7 +37,10 @@ public class EventManager {
                 executeEvents = executeEvents.then(event.execute(c,rawEvent));
             }
         }
-        return executeEvents;
+        return executeEvents.doOnError(throwable -> {
+            System.err.println(throwable.getMessage());
+            throwable.printStackTrace();
+        }).timeout(Duration.ofMillis(20000));
     }
 
     private void subscribeToEvents() {

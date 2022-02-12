@@ -1,4 +1,4 @@
-package com.github.et118.El_Mama;
+package com.github.et118.El_Macho;
 
 public class main {
     public static void main(String[] args) {

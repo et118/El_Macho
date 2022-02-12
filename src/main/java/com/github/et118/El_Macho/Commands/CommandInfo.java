@@ -1,4 +1,4 @@
-package com.github.et118.El_Mama.Commands;
+package com.github.et118.El_Macho.Commands;
 
 public class CommandInfo {
     private String[] prefixes;

@@ -1,12 +1,14 @@
-package com.github.et118.El_Mama.Events;
+package com.github.et118.El_Macho.Events;
 
-import com.github.et118.El_Mama.Commands.Command;
-import com.github.et118.El_Mama.Commands.CommandInfo;
-import com.github.et118.El_Mama.Commands.InfoCommand;
-import com.github.et118.El_Mama.Commands.PingCommand;
+import com.github.et118.El_Macho.Commands.*;
+import com.github.et118.El_Macho.Commands.Core.InfoCommand;
+import com.github.et118.El_Macho.Commands.Core.PingCommand;
+import com.github.et118.El_Macho.Commands.Music.*;
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.entity.Message;
 import reactor.core.publisher.Mono;
+
+import java.time.Duration;
 import java.util.ArrayList;
 
 public class CommandEvent extends Event{
@@ -20,8 +22,20 @@ public class CommandEvent extends Event{
         this.events = (ArrayList<Event>) events.clone();
         this.events.add(0,this);
 
-        this.commands.add(new PingCommand(new CommandInfo(new String[]{"p","ping"},"Ping","Tests if the bot can respond","Core",true)));
-        this.commands.add(new InfoCommand(commands, events, new CommandInfo(new String[]{"i","info"},"Info", "Shows information about commands and events","Core",true)));
+        this.commands.add(new PingCommand(new CommandInfo(new String[]{"ping"},"Ping","Tests if the bot can respond","Core",true)));
+        this.commands.add(new InfoCommand(commands, events, new CommandInfo(new String[]{"i","info","help"},"Info", "Shows information about commands and events","Core",true)));
+        this.commands.add(new PlayCommand(new CommandInfo(new String[]{"play","p"},"Play","Play track","Music",true)));
+        this.commands.add(new PlaytopCommand(new CommandInfo(new String[]{"playtop","pt"},"Playtop","Play track first in queue","Music",true)));
+        this.commands.add(new JoinCommand(new CommandInfo(new String[]{"join"},"Join","Join the voice channel","Music",true)));
+        this.commands.add(new LeaveCommand(new CommandInfo(new String[]{"leave"},"Leave","Leave the voice channel","Music",true)));
+        this.commands.add(new LoopCommand(new CommandInfo(new String[]{"loop"},"Loop","Loop the current song or the playlist","Music",true)));
+        this.commands.add(new UnloopCommand(new CommandInfo(new String[]{"unloop"},"Unloop","Unloop the current song or playlist","Music",true)));
+        this.commands.add(new ClearCommand(new CommandInfo(new String[]{"clear"},"Clear","Clear the queue","Music",true)));
+        this.commands.add(new PauseCommand(new CommandInfo(new String[]{"pause","stop"},"Pause","Pause the track","Music",true)));
+        this.commands.add(new ResumeCommand(new CommandInfo(new String[]{"resume","start"},"Resume","Resume the track","Music",true)));
+        this.commands.add(new ShuffleCommand(new CommandInfo(new String[]{"shuffle"},"Shuffle","Shuffle the queue","Music",true)));
+        this.commands.add(new SkipCommand(new CommandInfo(new String[]{"skip","fs"},"Skip","Skip the current track","Music",true)));
+        this.commands.add(new QueueCommand(new CommandInfo(new String[]{"queue","q"},"Queue","Display the queue","Music",true)));
     }
 
     @Override

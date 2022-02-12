@@ -4,20 +4,24 @@ plugins {
 
 group 'com.github.et118'
 version '1.0'
-def mainClassName = "com.github.et118.El_Mama.main"
+def mainClassName = "com.github.et118.El_Macho.main"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://m2.dv8tion.net/releases'
+    }
 }
 
 dependencies {
     implementation "com.discord4j:discord4j-core:3.2.1"
+    implementation "com.sedmelluq:lavaplayer:1.3.77"
 }
 
 task run(type: JavaExec) {
-    group "El Mama"
+    group "El Macho"
     description "Runs the program"
     classpath sourceSets.main.runtimeClasspath
     main mainClassName
@@ -25,7 +29,7 @@ task run(type: JavaExec) {
 
 
 task fatJar(type: Jar) {
-    group "El Mama"
+    group "El Macho"
     description "Creates an executable jar"
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     destinationDirectory = file("$rootDir/out")

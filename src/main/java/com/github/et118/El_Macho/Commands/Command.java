@@ -1,4 +1,4 @@
-package com.github.et118.El_Mama.Commands;
+package com.github.et118.El_Macho.Commands;
 
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import reactor.core.publisher.Mono;

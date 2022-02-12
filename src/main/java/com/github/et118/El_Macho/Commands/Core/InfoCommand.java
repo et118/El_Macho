@@ -1,5 +1,7 @@
-package com.github.et118.El_Macho.Commands;
+package com.github.et118.El_Macho.Commands.Core;
 
+import com.github.et118.El_Macho.Commands.Command;
+import com.github.et118.El_Macho.Commands.CommandInfo;
 import com.github.et118.El_Macho.Events.Event;
 import com.github.et118.El_Macho.Misc.Colors;
 import discord4j.core.event.domain.message.MessageCreateEvent;
@@ -10,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class InfoCommand extends Command{
+public class InfoCommand extends Command {
     private ArrayList<Command> commands;
     private ArrayList<Event> events;
     public InfoCommand(ArrayList<Command> commands, ArrayList<Event> events, CommandInfo commandInfo) {

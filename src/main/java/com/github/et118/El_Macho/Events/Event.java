@@ -1,4 +1,4 @@
-package com.github.et118.El_Mama.Events;
+package com.github.et118.El_Macho.Events;
 
 import reactor.core.publisher.Mono;
 
