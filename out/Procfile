@@ -1,0 +1,1 @@
+worker: java -jar "El Macho-1.0.jar" $JAR_OPTS
