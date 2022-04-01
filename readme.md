@@ -22,3 +22,8 @@ It uses gradle 7.3.3 and java 17.
 - Leave - Uno reverse on Join command
 ### TODO
 - Idk, make it better and fix bugs, i guess
+
+### Images
+![image](https://user-images.githubusercontent.com/51513175/161195760-e5602bdd-5e0b-4616-b28e-8bb448d42a8e.png)
+![image](https://user-images.githubusercontent.com/51513175/161195892-8f789da2-da6b-4e87-8165-523e11cb9660.png)
+![image](https://user-images.githubusercontent.com/51513175/161195915-47b6b421-b5be-422d-982d-b860435c0cd3.png)
