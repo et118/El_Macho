@@ -25,6 +25,5 @@ It uses gradle 7.3.3 and java 17.
 
 ### Images
 ![161195915-47b6b421-b5be-422d-982d-b860435c0cd3](https://user-images.githubusercontent.com/51513175/200403810-09f3fb06-3cba-4cfc-80a5-e59b2bc78dca.png)
-![161195760-e5602bdd-5e0b-4616-b28e-8bb448d42a8e (1)](https://user-images.githubusercontent.com/51513175/200403814-d1333e93-7d51-485c-900f-e5a8f704606d.png)
 ![161195760-e5602bdd-5e0b-4616-b28e-8bb448d42a8e](https://user-images.githubusercontent.com/51513175/200403815-fcebbb42-b971-41a7-bd3d-4a57c2f263b4.png)
 ![161195892-8f789da2-da6b-4e87-8165-523e11cb9660](https://user-images.githubusercontent.com/51513175/200403818-38a9a618-a6b1-406c-b246-4689b98417b0.png)
