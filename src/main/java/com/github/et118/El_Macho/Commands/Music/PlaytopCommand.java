@@ -2,7 +2,7 @@ package com.github.et118.El_Macho.Commands.Music;
 
 import com.github.et118.El_Macho.Commands.Command;
 import com.github.et118.El_Macho.Commands.CommandInfo;
-import com.github.et118.El_Macho.Commands.Music.MusicManager;
+import com.github.et118.El_Macho.Music.MusicManager;
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import discord4j.core.object.VoiceState;
 import discord4j.core.object.entity.Member;

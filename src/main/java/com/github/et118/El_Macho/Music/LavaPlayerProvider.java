@@ -1,4 +1,4 @@
-package com.github.et118.El_Macho.Commands.Music;
+package com.github.et118.El_Macho.Music;
 
 import com.sedmelluq.discord.lavaplayer.format.StandardAudioDataFormats;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;

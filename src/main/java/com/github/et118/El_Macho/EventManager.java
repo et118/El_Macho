@@ -1,9 +1,6 @@
 package com.github.et118.El_Macho;
 
-import com.github.et118.El_Macho.Events.CommandEvent;
-import com.github.et118.El_Macho.Events.Event;
-import com.github.et118.El_Macho.Events.EventInfo;
-import com.github.et118.El_Macho.Events.MusicEvent;
+import com.github.et118.El_Macho.Events.*;
 import discord4j.core.GatewayDiscordClient;
 import reactor.core.publisher.Mono;
 
@@ -24,9 +21,11 @@ public class EventManager {
     }
 
     public void addEvents() {
+
+        events.add(new MusicEvent(new EventInfo("Music","Adds and removes the music player","Music",true)));
+        events.add(new DisconnectEvent(new EventInfo("Disconnect","Disconnects the bot when sitting in an empty call","Music",true)));
         //Don't add events under the CommandEvent. It uses the other events in the Info Command.
         events.add(new CommandEvent("!", events, new EventInfo("Command", "Controls commands", "Core", true)));
-        events.add(new MusicEvent(new EventInfo("Music","Adds and removes the music player","Music",true)));
         subscribeToEvents();
     }
 

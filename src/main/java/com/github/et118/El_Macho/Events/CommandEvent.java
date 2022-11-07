@@ -35,7 +35,7 @@ public class CommandEvent extends Event{
         this.commands.add(new ResumeCommand(new CommandInfo(new String[]{"resume","start"},"Resume","Resume the track","Music",true)));
         this.commands.add(new ShuffleCommand(new CommandInfo(new String[]{"shuffle"},"Shuffle","Shuffle the queue","Music",true)));
         this.commands.add(new SkipCommand(new CommandInfo(new String[]{"skip","fs"},"Skip","Skip the current track","Music",true)));
-        this.commands.add(new QueueCommand(new CommandInfo(new String[]{"queue","q"},"Queue","Display the queue","Music",true)));
+        this.commands.add(new QueueCommand(new CommandInfo(new String[]{"queue","q"},"Queue","Display the queue","Music",true),5));
     }
 
     @Override

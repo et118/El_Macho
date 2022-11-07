@@ -1,6 +1,6 @@
 package com.github.et118.El_Macho.Events;
 
-import com.github.et118.El_Macho.Commands.Music.MusicManager;
+import com.github.et118.El_Macho.Music.MusicManager;
 import discord4j.core.event.domain.guild.GuildCreateEvent;
 import discord4j.core.event.domain.guild.GuildDeleteEvent;
 import reactor.core.publisher.Mono;
