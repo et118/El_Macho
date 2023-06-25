@@ -1,11 +1,13 @@
 package com.github.et118.El_Macho.Music;
 
+import com.fasterxml.jackson.databind.exc.ValueInstantiationException;
 import com.github.et118.El_Macho.Misc.Colors;
 import com.sedmelluq.discord.lavaplayer.player.AudioLoadResultHandler;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.player.DefaultAudioPlayerManager;
 import com.sedmelluq.discord.lavaplayer.source.AudioSourceManagers;
+import com.sedmelluq.discord.lavaplayer.source.youtube.YoutubeAudioSourceManager;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.playback.NonAllocatingAudioFrameBuffer;
 import discord4j.common.util.Snowflake;
@@ -79,7 +81,8 @@ public class MusicManager {
         String[] message = event.getMessage().getContent().split(" ",2);
         if(message.length <=1) return Mono.empty();
         scheduler.setNextTrackPlaytop(playtop);
-        if (message[1].contains("youtube.com/playlist") || message[1].contains("youtube.com/watch") || message[1].contains("youtu.be/")) {
+
+        if (message[1].contains("youtube.com/playlist") || message[1].contains("youtube.com/watch") || message[1].contains("youtu.be/") || message[1].contains("soundcloud.com")) {
             try { manager.loadItem(message[1],handler).get(); } catch (InterruptedException | ExecutionException e) { e.printStackTrace(); }
         } else {
             try { manager.loadItem("ytsearch:"+message[1],handler).get(); } catch (InterruptedException | ExecutionException e) { e.printStackTrace(); }

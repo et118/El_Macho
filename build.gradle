@@ -16,8 +16,8 @@ repositories {
 }
 
 dependencies {
-    implementation "com.discord4j:discord4j-core:3.2.4"
-    implementation 'com.github.walkyst:lavaplayer-fork:1.4.0'
+    implementation "com.discord4j:discord4j-core:3.2.5"
+    implementation 'com.github.walkyst:lavaplayer-fork:1.4.2'
 }
 
 task run(type: JavaExec) {

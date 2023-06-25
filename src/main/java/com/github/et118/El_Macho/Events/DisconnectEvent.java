@@ -20,13 +20,15 @@ public class DisconnectEvent extends Event{
     public Mono<Void> execute(Class eventType, discord4j.core.event.domain.Event rawEvent) {
         VoiceStateUpdateEvent event = (VoiceStateUpdateEvent) rawEvent;
         VoiceConnection botConnection = MusicManager.getGuild(event.getCurrent().getGuildId()).getVoiceConnection().block();
-        if(botConnection != null && (event.isLeaveEvent() || event.isMoveEvent()) && !event.getOld().get().getUser().block().isBot()) {
+        if(botConnection != null){
             if(event.getOld().get().getChannelId().get().equals(botConnection.getChannelId().block())) {
-                Long voiceStatesLeft = event.getOld().get().getChannel().block().getVoiceStates().filter(state -> !state.getUser().block().isBot()).count().block();
-                if(event.isMoveEvent())
-                    voiceStatesLeft -= 1;
-                if(voiceStatesLeft == 0) {
-                    return MusicManager.leaveChannel(event.getCurrent().getGuildId());
+                if ((event.isLeaveEvent() || event.isMoveEvent()) && !event.getOld().get().getUser().block().isBot()){
+                    Long voiceStatesLeft = event.getOld().get().getChannel().block().getVoiceStates().filter(state -> !state.getUser().block().isBot()).count().block();
+                    if (event.isMoveEvent())
+                        voiceStatesLeft -= 1;
+                    if (voiceStatesLeft <= 0) {
+                        return MusicManager.leaveChannel(event.getCurrent().getGuildId());
+                    }
                 }
             }
         }

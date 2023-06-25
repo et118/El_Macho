@@ -1,7 +1,10 @@
 package com.github.et118.El_Macho;
 
+import com.fasterxml.jackson.databind.exc.ValueInstantiationException;
 import com.github.et118.El_Macho.Events.*;
 import discord4j.core.GatewayDiscordClient;
+import discord4j.discordjson.json.ImmutableEmbedAuthorData;
+import reactor.core.publisher.Hooks;
 import reactor.core.publisher.Mono;
 
 import java.time.Duration;
@@ -18,6 +21,7 @@ public class EventManager {
         this.discordClient = discordClient;
         this.events = new ArrayList<>();
         this.subscribedEvents = new HashMap<>();
+        Hooks.onOperatorDebug();
     }
 
     public void addEvents() {
@@ -36,10 +40,10 @@ public class EventManager {
                 executeEvents = executeEvents.then(event.execute(c,rawEvent));
             }
         }
-        return executeEvents.doOnError(throwable -> {
-            System.err.println(throwable.getMessage());
-            throwable.printStackTrace();
-        }).timeout(Duration.ofMillis(20000));
+        return executeEvents
+                .doOnError(System.err::println)
+                .onErrorResume(e -> Mono.fromRunnable(e::printStackTrace))
+                .timeout(Duration.ofMillis(20000));
     }
 
     private void subscribeToEvents() {
