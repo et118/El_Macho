@@ -3,22 +3,27 @@ plugins {
 }
 
 group 'com.github.et118'
-version '1.0'
+version '1.2'
 def mainClassName = "com.github.et118.El_Macho.main"
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
     maven {
         url 'https://jitpack.io'
     }
+    maven {
+        url 'https://maven.lavalink.dev/snapshots'
+    }
 }
 
 dependencies {
-    implementation "com.discord4j:discord4j-core:3.2.5"
+    //implementation "com.discord4j:discord4j-core:3.2.5"
+    implementation "com.discord4j:discord4j-core:3.2.6"
     //implementation 'com.github.walkyst:lavaplayer-fork:1.4.2'
-    implementation 'dev.arbjerg:lavaplayer:2.0.0'
+    //implementation 'dev.arbjerg:lavaplayer:2.1.1'
+    implementation 'dev.arbjerg:lavaplayer:0eaeee195f0315b2617587aa3537fa202df07ddc-SNAPSHOT'
 }
 
 task run(type: JavaExec) {
